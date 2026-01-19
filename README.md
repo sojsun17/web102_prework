@@ -28,6 +28,8 @@ The following **optional** features are implemented:
 Here's a walkthrough of implemented features:
 <img src='https://i.imgur.com/alwHH7z.gif' title='Video Walkthrough'  alt='Video Walkthrough' />
 
+If Gif doesnt work:
+[Watch the walkthrough](https://imgur.com/a/lNv08Lo)
 <!-- Replace this with whatever GIF tool you used! -->
 GIF created with Adobe Express & hosted on imgur
 <!-- Recommended tools:
@@ -35,7 +37,11 @@ GIF created with Adobe Express & hosted on imgur
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+Describe any challenges encountered while building the app:
+
+Reccomended Gif options were too big to commit to discord 
+
+
 
 ## License
 
