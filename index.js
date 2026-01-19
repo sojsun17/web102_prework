@@ -155,7 +155,7 @@ const numunfundedGames = unfundedGames.length;
 // create a string that explains the number of unfunded games using the ternary operator
 const description = `
 A total of $${amountRaised.toLocaleString()} has been raised for ${GAMES_JSON.length} games.
-Currently, ${numUnfunded} game${numUnfunded === 1 ? "" : "s"} remain unfunded.
+Currently, ${numunfundedGames} game${numunfundedGames === 1 ? "" : "s"} remain unfunded.
 `;
 
 // create a new DOM element containing the template string and append it to the description container
@@ -177,7 +177,44 @@ const sortedGames = GAMES_JSON.sort((item1, item2) => {
 });
 
 // use destructuring and the spread operator to grab the first and second games
+const [firstGameObj, secondGameObj] = sortedGames;
+
 
 // create a new element to hold the name of the top pledge game, then append it to the correct element
 
+const firstGameElement = document.createElement('p');
+firstGameElement.textContent = firstGameObj.name;
+firstGameContainer.appendChild(firstGameElement);
+
 // do the same for the runner up item
+
+const secondGameElement = document.createElement('p');
+secondGameElement.textContent = secondGameObj.name;
+secondGameContainer.appendChild(secondGameElement);
+
+// bubble animation :
+const bubbleContainer = document.querySelector('.bubble-container');
+
+function createBubble() {
+    const bubble = document.createElement('div');
+    bubble.classList.add('bubble');
+
+    // randomize the position
+    const size = Math.random() * 20 + 10;
+    const left = Math.random() * 100;
+    bubble.style.width = `${size}px`;
+    bubble.style.height = `${size}px`;
+    bubble.style.left = `${left}%`;
+
+    // randomize animation duration
+    bubble.style.animationDuration = `${Math.random() * 5 + 8}s`; // 8s to 13s
+
+    bubbleContainer.appendChild(bubble);
+
+    // "pop" bubble after
+    setTimeout(() => {
+        bubble.remove();
+    }, 13000);
+}
+
+setInterval(createBubble, 500); // make new bubbles every 0.5 seconds
